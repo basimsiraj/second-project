@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom"
 function SideNavBar() {
   return (
     <>
+        <Wrapper>
         <SideNavMainContainer>
             <SideNavTopContainer>
                 <LogoContainer>
@@ -13,7 +14,7 @@ function SideNavBar() {
             </SideNavTopContainer>
             <SideNav>
                     <SideNavSubContaineer>
-                        <NavLink>
+                        <NavLink to="/">
                             <SidNavListItem>
                                 <LogoImageContainer>
                                     <LogoImage src={require("../../assets/images/Home.svg").default}  alt="Home" />
@@ -21,7 +22,7 @@ function SideNavBar() {
                                 <NavItemName>Home</NavItemName>
                             </SidNavListItem>
                         </NavLink>
-                        <NavLink>
+                        <NavLink to="/schedular">
                             <SidNavListItem>
                                 <LogoImageContainer>
                                     <LogoImage src={require("../../assets/images/Schedular.svg").default}  alt="Schedular" />
@@ -29,7 +30,7 @@ function SideNavBar() {
                                     <NavItemName>Schedular</NavItemName>
                             </SidNavListItem>
                         </NavLink>
-                        <NavLink>
+                        <NavLink to="/technology">
                             <SidNavListItem>
                                 <LogoImageContainer>
                                     <LogoImage src={require("../../assets/images/Technology.svg").default}  alt="Technology" />
@@ -37,7 +38,7 @@ function SideNavBar() {
                                 <NavItemName>Technology</NavItemName>
                             </SidNavListItem>
                         </NavLink>
-                        <NavLink>
+                        <NavLink to="/rewards">
                             <SidNavListItem>
                                 <LogoImageContainer>
                                     <LogoImage src={require("../../assets/images/Home.svg").default}  alt="Home" />
@@ -45,7 +46,7 @@ function SideNavBar() {
                                 <NavItemName>Rewards</NavItemName>
                             </SidNavListItem>
                         </NavLink>
-                        <NavLink>
+                        <NavLink to="/notes">
                             <SidNavListItem>
                                 <LogoImageContainer>
                                     <LogoImage src={require("../../assets/images/Notes.svg").default}  alt="Notes" />
@@ -53,7 +54,7 @@ function SideNavBar() {
                                 <NavItemName>Notes</NavItemName>
                             </SidNavListItem>
                         </NavLink>
-                        <NavLink>
+                        <NavLink to="/submission">
                             <SidNavListItem>
                                 <LogoImageContainer>
                                     <LogoImage src={require("../../assets/images/Submission.svg").default}  alt="Submission" />
@@ -73,9 +74,13 @@ function SideNavBar() {
                 </SideNavBottomSubContainer>
             </SideNavBottomMainContainer>
         </SideNavMainContainer>
+        </Wrapper>
     </>
   );
 }
+const Wrapper = styled.div`
+    /* width: 20%; */
+`;
 const SideNavMainContainer = styled.div`
     background-color: lightcyan;
     width: 224px;
@@ -101,13 +106,15 @@ const SidNavListItem = styled.li`
     margin-bottom: 42px;
 `;
 const LogoImageContainer = styled.div`
-    margin-right: 18px;
+    margin-right: 24px;
 `;
 const LogoImage = styled.img`
     display: block;
     width: 100%;
 `;
-const NavItemName = styled.span``; 
+const NavItemName = styled.span`
+    font-size: 13px;
+`; 
 const SideNavBottomMainContainer = styled.div`
     border: 1px solid green;
     margin-left: 38px;
@@ -126,16 +133,17 @@ const BookImage = styled.img`
     width: 100%;
 `;
 const Button = styled.button`
-    padding: 10px 15px 10px 15px;
+    padding: 8px 14px 9px 15px;
     background-color: blue;
     color: white;
+    font-family: 'Poppins-Regular';
     border-radius: 3px;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 13px;
 `;
 const LearnLink = styled.a`
     display: block;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
 `;
 export default SideNavBar;

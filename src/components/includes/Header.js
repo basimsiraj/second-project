@@ -20,8 +20,9 @@ function Header() {
     </>
   );
 }
-const MainContainer = styled.div`
-    padding: 20px 30px 0px 0px;
+const MainContainer = styled.header`
+    padding: 20px 36px 0px 0px;
+    width: 100%;
 `;
 const IconContainer = styled.ul`
     display: flex;

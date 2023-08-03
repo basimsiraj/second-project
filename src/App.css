@@ -19,7 +19,7 @@ del {
     text-decoration: line-through;
 }
 body {
-    font-family: "Inter-Regular";
+    font-family: "Poppins-Regular";
     font-size: 17px;
     color: #000;
     overflow-x: hidden;
@@ -29,7 +29,7 @@ body {
 input,
 textarea,
 select {
-    font-family: "Inter-Regular";
+    font-family: "Poppins-Regular";
     font-weight: 500;
 }
 
@@ -46,7 +46,7 @@ a {
 p {
     line-height: 1.6em;
     font-size: 16px;
-    font-family: "Inter-Regular";
+    font-family: "Poppins-Regular";
     font-weight: 500;
     color: #000;
 }
@@ -67,7 +67,7 @@ br.clear {
     justify-content: space-between;
 }
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins-Bold';
     src: url('./assets/fonts/Poppins-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
@@ -75,7 +75,7 @@ br.clear {
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins-Medium';
     src: url('./assets/fonts/Poppins-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
@@ -83,7 +83,7 @@ br.clear {
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins-Light';
     src: url('./assets/fonts/Poppins-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
@@ -91,7 +91,7 @@ br.clear {
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins-Regular';
     src: url('./assets/fonts/Poppins-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
