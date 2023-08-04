@@ -134,7 +134,7 @@ function Schedular() {
                     </StyledSliderWrapper>
             </LessonContainer>
             <BottomContainer>
-                <LeftContainer>
+                <AssignmentContainer>
                     <Title>Assignment Manager</Title>
                     <AssignmentStatus>
                         <StatusList>Pending</StatusList>
@@ -142,29 +142,34 @@ function Schedular() {
                         <StatusList>Submitted</StatusList>
                     </AssignmentStatus>
                     <AssignmentStatusSubContainer>
-                        <AssignmentDetails>
-                            <AssignmentDetailsList>
-                                <SubjectName>Basic Physics III<ProgressBar></ProgressBar>
-                                </SubjectName>
-                                <SubjectDetails>Final assessment | Due 14th March 2020</SubjectDetails>
-                                <ButtonContainer>
-                                    <Button>Resume</Button>
-                                </ButtonContainer>
-                            </AssignmentDetailsList>
-                            <AssignmentDetailsList>
-                                <SubjectName>Mental Math I<ProgressBar></ProgressBar>
-                                </SubjectName>
-                                <SubjectDetails>Class test | Due tomorrow</SubjectDetails>
-                                <ButtonContainer>
-                                    <Button>Start</Button>
-                                </ButtonContainer>
-                            </AssignmentDetailsList>
-                        </AssignmentDetails>     
+                        <AssignmentStatusInnerContainer>
+                            <AssignmentDetails>
+                                <AssignmentDetailsList>
+                                    <DetailsLeft>
+                                        <SubjectName>Basic Physics II</SubjectName>
+                                    <SubjectDetails>Final assessment | Due 14th March 2020</SubjectDetails>
+                                    </DetailsLeft>
+                                    <DetailsRight>
+                                        <ResumeButton>Resume</ResumeButton>
+                                    </DetailsRight>
+                                </AssignmentDetailsList>
+                                <AssignmentDetailsList>
+                                    <DetailsLeft>
+                                        <SubjectName>Mental Math I</SubjectName>
+                                        <SubjectDetails>Class test | Due tomorrow</SubjectDetails>
+                                    </DetailsLeft>
+                                    <DetailsRight>
+                                        <StartButton>Start</StartButton>
+                                    </DetailsRight>
+                                </AssignmentDetailsList>
+                            </AssignmentDetails>    
+                        </AssignmentStatusInnerContainer> 
                     </AssignmentStatusSubContainer>
-                </LeftContainer>
-                <RightContainer>
+                </AssignmentContainer>
+                <LiveContainer>
+                    <RightTitle>Live Session</RightTitle>
 
-                </RightContainer>
+                </LiveContainer>
             </BottomContainer>
        </Container> 
     </>
@@ -253,18 +258,19 @@ const PersonDetails = styled.p`
     font-size: 10px;
 `;
 const BottomContainer = styled.div`
-    padding-top: 30px;
-    padding-left: 60px;
-    padding-bottom: 40px;
-    padding-right: 0px;
+    display: flex;
+    padding: 20px 40px 30px 56px;
 `;
-const LeftContainer = styled.div`
+const AssignmentContainer = styled.div`
+    width: 45%;
+    margin-right: 20px;
+    
     
 `;
 const Title = styled.h6`
     font-size: 17px;
     font-family: Poppins-Bold;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 `;
 const AssignmentStatus = styled.ul`
     display: flex;
@@ -273,18 +279,62 @@ const StatusList = styled.li`
     margin-right: 32px;
     font-family: Poppins-Bold;
     font-size: 13px;
+    &:last-child {
+        margin-right: 0px;
+    }
 `;
 const AssignmentStatusSubContainer = styled.div`
     margin-top: 40px;
     background-color: white;
-    width: 46%;
+`;
+const AssignmentStatusInnerContainer = styled.div`
+    padding-top: 63px;
+    padding-left: 20px;
+    padding-bottom: 30px;
 `;
 const AssignmentDetails = styled.ul``;
-const AssignmentDetailsList = styled.li``;
-const SubjectName = styled.h5``;
-const ProgressBar = styled.button``;
-const SubjectDetails = styled.p``;
-const ButtonContainer = styled.div``;
-const Button = styled.button``;
-const RightContainer = styled.div``;
+const AssignmentDetailsList = styled.li`
+    display: flex;
+    margin-bottom: 14px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+    
+`;
+const DetailsLeft = styled.div`
+    width: 90%;
+    
+`;
+const DetailsRight = styled.div`
+    width: 25%;
+`;
+const SubjectName = styled.h5`
+    font-family: Poppins-Bold;
+    margin-bottom: 10px;
+    font-size: 13px;
+`;
+const SubjectDetails = styled.p`
+    font-size: 11px;
+    color: gray;
+`;
+const ResumeButton = styled.button`
+    border: 1px solid yellow;
+    padding: 6px 12px 6px 12px;
+    font-family: 'Poppins-Medium';
+    border-radius: 3px;
+    color: yellow;
+    font-size: 12px;
+`;
+const StartButton = styled.button`
+    border: 1px solid blue;
+    padding: 5px 22px 5px 22px;
+    font-family: 'Poppins-Medium';
+    border-radius: 3px;
+    color: blue;
+    font-size: 12px;
+`;
+const LiveContainer = styled.div`
+    width: 50%;
+`;
+const RightTitle = styled.h6``;
 export default Schedular;
