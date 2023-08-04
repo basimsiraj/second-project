@@ -79,7 +79,7 @@ function SideNavBar() {
   );
 }
 const Wrapper = styled.div`
-    /* width: 20%; */
+    
 `;
 const SideNavMainContainer = styled.div`
     background-color: lightcyan;
@@ -97,7 +97,7 @@ const Logo = styled.img`
     width: 100%;
 `;
 const SideNav = styled.div`
-    padding: 48px 20px 58px 60px;
+    padding: 86px 20px 58px 60px;
 `;
 const SideNavSubContaineer = styled.ul``;
 const SidNavListItem = styled.li`

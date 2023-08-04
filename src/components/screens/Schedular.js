@@ -147,6 +147,11 @@ function Schedular() {
                                 <AssignmentDetailsList>
                                     <DetailsLeft>
                                         <SubjectName>Basic Physics II</SubjectName>
+                                        <ProgressBar>
+                                            <ProgressBarSubContainer>
+                                                <ProgressBarInnerContainer></ProgressBarInnerContainer>
+                                            </ProgressBarSubContainer>
+                                        </ProgressBar>
                                     <SubjectDetails>Final assessment | Due 14th March 2020</SubjectDetails>
                                     </DetailsLeft>
                                     <DetailsRight>
@@ -179,7 +184,14 @@ function Schedular() {
                                 <ProfessorName>Physics Prof Lee Dan Qi</ProfessorName>
                             </MiddleLeftContainer>
                             <MiddleRightContainer>
-                                <PlayButton><PlayImage src={require("../../assets/images/Play.svg").default} alt="Play" />join</PlayButton>
+                                <PlayInnerContainer>
+                                    <PlayImageContaineer>
+                                        <PlayImage src={require("../../assets/images/Play.svg").default} alt="Play" />
+                                    </PlayImageContaineer>
+                                </PlayInnerContainer>
+                                <PlayButton>
+                                    <Span>join</Span>
+                                </PlayButton>
                             </MiddleRightContainer>
                         </MiddleContainer>
                         <HorizontalLine />
@@ -190,9 +202,15 @@ function Schedular() {
                                         <TickImageContainer>
                                             <TickImage src={require("../../assets/images/GreeenTick.svg").default} alt="Green Tick" />
                                         </TickImageContainer>
-                                        <TopicName>Force and unit</TopicName>
-                                        <Time>03:40min</Time>
-                                        <ButtonMode>Medium</ButtonMode>
+                                        <TopicNameContainer>
+                                            <TopicName>Force and unit</TopicName>
+                                        </TopicNameContainer>
+                                        <TimeContainer>
+                                            <Time>03:40min</Time>
+                                        </TimeContainer>
+                                        <ButtonContainer>
+                                            <MediumButton>Medium</MediumButton>
+                                        </ButtonContainer>
                                     </ListItemContainer>
                                 </TopicListItem>
                                 <TopicListItem>
@@ -200,9 +218,15 @@ function Schedular() {
                                         <TickImageContainer>
                                             <TickImage src={require("../../assets/images/GrayTick.svg").default} alt="Gray Tick" />
                                         </TickImageContainer>
-                                        <TopicName>Mass and acceleration</TopicName>
-                                        <Time>06:08min</Time>
-                                        <ButtonMode>Hard</ButtonMode>
+                                        <TopicNameContainer>
+                                            <TopicName>Mass and acceleration</TopicName>
+                                        </TopicNameContainer>
+                                        <TimeContainer>
+                                            <Time>06:08min</Time>
+                                        </TimeContainer>
+                                        <ButtonContainer>
+                                            <HardButton>Hard</HardButton>
+                                        </ButtonContainer>
                                     </ListItemContainer>
                                 </TopicListItem>
                                 <TopicListItem>
@@ -210,9 +234,15 @@ function Schedular() {
                                         <TickImageContainer>
                                             <TickImage src={require("../../assets/images/GrayTick.svg").default} alt="Gray Tick" />
                                         </TickImageContainer>
-                                        <TopicName>Gain of Momentum</TopicName>
-                                        <Time>09:30min</Time>
-                                        <ButtonMode>Medium</ButtonMode>
+                                        <TopicNameContainer>
+                                            <TopicName>Gain of Momentum</TopicName>
+                                        </TopicNameContainer>
+                                        <TimeContainer>
+                                            <Time>09:30min</Time>
+                                        </TimeContainer>
+                                        <ButtonContainer>
+                                            <MediumButton>Medium</MediumButton>
+                                        </ButtonContainer>
                                     </ListItemContainer>
                                 </TopicListItem>
                             </TopicDetails>
@@ -360,6 +390,14 @@ const SubjectName = styled.h5`
     margin-bottom: 10px;
     font-size: 13px;
 `;
+const ProgressBar = styled.div``;
+const ProgressBarSubContainer = styled.div`
+    width: 30%;
+    background-color: gray;
+`;
+const ProgressBarInnerContainer = styled.div`
+    width: 70%;
+`;
 const SubjectDetails = styled.p`
     font-size: 11px;
     color: gray;
@@ -381,7 +419,7 @@ const StartButton = styled.button`
     font-size: 12px;
 `;
 const LiveContainer = styled.div`
-    width: 46%;
+    width: 42%;
 `;
 const RightTitle = styled.h6`
     font-family: 'Poppins-Bold';
@@ -397,7 +435,8 @@ const TopContainer = styled.div`
     border-bottom: 1px solid gray;
 `;
 const Lecture = styled.span`
-    font-size: 14px;
+    font-size: 13px;
+    font-family: 'Poppins-Medium';
 `;
 const HorizontalLine = styled.hr`
     width: 70%;
@@ -405,11 +444,11 @@ const HorizontalLine = styled.hr`
 `;
 const MiddleContainer = styled.div`
     display: flex;
-    padding: 20px 40px 20px 30px;
+    padding: 20px 27px 20px 30px;
     border-bottom: 1px solid gray;
 `;
 const MiddleLeftContainer = styled.div`
-    margin-right: 30px;
+    width: 76%;
 `;
 const RevisionDetails = styled.p`
     font-size: 12px;
@@ -418,20 +457,45 @@ const RevisionDetails = styled.p`
 const ProfessorName = styled.p`
     font-size: 12px;
     font-family: 'Poppins-Medium';
+    margin-left: 5px;
 `;
-const MiddleRightContainer = styled.div``;
-const PlayButton = styled.button`
-    background-color: blue;
-    padding: 5px 26px 5px 3px;
-    border-radius: 5px;
-    font-family: 'Poppins-Medium';
-    font-size: 14px;
-    color: white;
+const MiddleRightContainer = styled.div`
     display: flex;
     align-items: center;
+    background-color: blue;
+    border-radius: 5px;
+    height: 31px;
+    width: 100px;
 `;
+const PlayInnerContainer = styled.div`
+    width: 30%;
+   
+`;
+const PlayImageContaineer = styled.div` 
+    width: 22px;
+    margin-left: 3px;
+
+`;
+const PlayButton = styled.div`
+    width: 70%;
+    height: 31px;
+    background-color: grey;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+   
+`;
+const Span = styled.span`
+    margin-top: 6px;
+    display: block;
+    font-size: 14px;
+    color: white;
+    margin-left: 22px;   
+`;
+
 const PlayImage = styled.img`
-    margin-right: 20px;
+    width: 100%;
+    display: block;
+
 `;
 const LiveBottomContainer = styled.div`
     padding: 17px 40px 0px 30px;
@@ -439,7 +503,7 @@ const LiveBottomContainer = styled.div`
 `;
 const TopicDetails = styled.ul``;
 const TopicListItem = styled.li`
-    margin-bottom: 20px;
+    margin-bottom: 11px;
     &:last-child {
         margin-bottom: 20px;
     }
@@ -452,24 +516,41 @@ const TickImageContainer = styled.div`
     width: 20px;
     margin-right: 20px;
 `;
+const TopicNameContainer = styled.div`
+    width: 45%;
+`;
+const TimeContainer = styled.div`
+    width: 29%;
+`;
+const ButtonContainer = styled.div`
+    width: 10%;
+`;
 const TickImage = styled.img`
     display: block;
     width: 100%;
 `;
 const TopicName = styled.span`
-    font-size: 12px;
+    font-size: 11px;
     font-family: 'Poppins-Medium';
     margin-right: 10px;
 `;
 const Time = styled.span`
-    font-size: 12px;
+    font-size: 11px;
     font-family: 'Poppins-Medium';
     margin-right: 10px;
 `;
-const ButtonMode = styled.button`
+const MediumButton = styled.button`
      font-family: 'Poppins-Medium';
-     padding: 2px 6px 2px 6px;
+     padding: 2px 8px 2px 8px;
      background-color: blue;
+     font-size: 10px;
+     border-radius: 4px;
+     color: white;
+`;
+const HardButton = styled.button`
+    font-family: 'Poppins-Medium';
+     padding: 2px 16px 2px 16px;
+     background-color: gray;
      font-size: 10px;
      border-radius: 4px;
      color: white;
