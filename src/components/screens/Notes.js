@@ -11,7 +11,9 @@ function Notes() {
     </>
   );
 }
-const MainContainer = styled.div``;
+const MainContainer = styled.div`
+  padding: 100px 0px 0px 100px;
+`;
 const Head = styled.h2``;
 const Description = styled.p``;
 export default Notes;

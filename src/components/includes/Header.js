@@ -21,7 +21,7 @@ function Header() {
   );
 }
 const MainContainer = styled.header`
-    padding: 42px 36px 0px 0px;
+    padding: 42px 67px 0px 0px;
     width: 100%;
 `;
 const IconContainer = styled.ul`

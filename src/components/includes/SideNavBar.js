@@ -82,12 +82,14 @@ const Wrapper = styled.div`
     
 `;
 const SideNavMainContainer = styled.div`
-    background-color: lightcyan;
-    width: 224px;
+    background-color: #fff;
+    /* width: 224px; */
     padding-bottom: 60px;
+    /* border: 1ps solid #dadada; */
+    /* box-shadow: 5px 10px  20px 10px red; */
 `;
 const SideNavTopContainer = styled.div`
-    padding: 20px 0px 0px 90px;
+    padding: 30px 0px 0px 90px;
 `;
 const LogoContainer = styled.div`
     width: 53px;
@@ -97,13 +99,13 @@ const Logo = styled.img`
     width: 100%;
 `;
 const SideNav = styled.div`
-    padding: 86px 20px 58px 60px;
+    padding: 86px 20px 35px 60px;
 `;
 const SideNavSubContaineer = styled.ul``;
 const SidNavListItem = styled.li`
     display: flex;
     align-items: center;
-    margin-bottom: 42px;
+    margin-bottom: 52px;
 `;
 const LogoImageContainer = styled.div`
     margin-right: 24px;
@@ -116,26 +118,26 @@ const NavItemName = styled.span`
     font-size: 13px;
 `; 
 const SideNavBottomMainContainer = styled.div`
-    border: 1px solid green;
+    border: 1px solid #e1e2e4;
     margin-left: 38px;
-    margin-right: 9px;
+    margin-right: 5px;
 
 `;
 const SideNavBottomSubContainer = styled.div`
     padding: 0px 24px 10px 30px;
 `;
 const BookImageContainer = styled.div`
-    width: 115px;
-    margin-bottom: 20px;
+   width: 115px;
+    margin-bottom: 7px;
 `;
 const BookImage = styled.img`
     display: block;
     width: 100%;
 `;
 const Button = styled.button`
-    padding: 8px 14px 9px 15px;
-    background-color: blue;
-    color: white;
+    padding: 8px 13px 8px 13px;
+    background-color: #5d75fb;
+    color: #fff;
     font-family: 'Poppins-Regular';
     border-radius: 3px;
     margin-bottom: 10px;
@@ -143,6 +145,7 @@ const Button = styled.button`
 `;
 const LearnLink = styled.a`
     display: block;
+    color: #5d75fb;
     text-align: center;
     font-size: 12px;
 `;
