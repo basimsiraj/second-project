@@ -20,16 +20,16 @@ function Schedular() {
 
     const handleResumeClick = () => {
         if (showMathsProgressBar) {
-          setShowMathsProgressBar(false);
+            setShowMathsProgressBar(false);
         }
-      };
-    
-      const handleStartClick = () => {
+    };
+
+    const handleStartClick = () => {
         if (showPhysicsProgressBar) {
-          setShowPhysicsProgressBar(false);
+            setShowPhysicsProgressBar(false);
         }
-      };
-   
+    };
+
     const settings = {
         dots: false,
         infinite: true,
@@ -37,6 +37,24 @@ function Schedular() {
         slidesToScroll: 1,
         speed: 500,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 980,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
+                },
+            },
+        ],
     };
     return (
         <>
@@ -282,10 +300,13 @@ function Schedular() {
                                                 <SubjectName>
                                                     Basic Physics II
                                                 </SubjectName>
-                                                <ProgressBar visible={showPhysicsProgressBar}>
+                                                <ProgressBar
+                                                    visible={
+                                                        showPhysicsProgressBar
+                                                    }
+                                                >
                                                     <ProgressBarSubContainer>
-                                                        <ProgressBarInnerContainer
-                                                        ></ProgressBarInnerContainer>
+                                                        <ProgressBarInnerContainer></ProgressBarInnerContainer>
                                                     </ProgressBarSubContainer>
                                                 </ProgressBar>
                                             </SubjectContainer>
@@ -295,7 +316,16 @@ function Schedular() {
                                             </SubjectDetails>
                                         </DetailsLeft>
                                         <DetailsRight>
-                                        <ResumeButton onClick={() => { setShowPhysicsProgressBar(true); handleResumeClick(); }}>Resume</ResumeButton>
+                                            <ResumeButton
+                                                onClick={() => {
+                                                    setShowPhysicsProgressBar(
+                                                        true
+                                                    );
+                                                    handleResumeClick();
+                                                }}
+                                            >
+                                                Resume
+                                            </ResumeButton>
                                         </DetailsRight>
                                     </AssignmentDetailsList>
                                     <AssignmentDetailsList>
@@ -304,7 +334,11 @@ function Schedular() {
                                                 <SubjectName>
                                                     Mental Math I
                                                 </SubjectName>
-                                                <ProgressMathsBar visible={showMathsProgressBar}>
+                                                <ProgressMathsBar
+                                                    visible={
+                                                        showMathsProgressBar
+                                                    }
+                                                >
                                                     <ProgressBarSubContainer>
                                                         <ProgressBarInnerContainer></ProgressBarInnerContainer>
                                                     </ProgressBarSubContainer>
@@ -315,7 +349,13 @@ function Schedular() {
                                             </SubjectDetails>
                                         </DetailsLeft>
                                         <DetailsRight>
-                                            <StartButton onClick={() => { setShowMathsProgressBar(true); handleStartClick(); }}
+                                            <StartButton
+                                                onClick={() => {
+                                                    setShowMathsProgressBar(
+                                                        true
+                                                    );
+                                                    handleStartClick();
+                                                }}
                                             >
                                                 Start
                                             </StartButton>
@@ -326,7 +366,10 @@ function Schedular() {
                         </AssignmentStatusSubContainer>
                     </AssignmentContainer>
                     <LiveContainer>
-                        <RightTitle>Live Session</RightTitle>
+                        <LiveHeadingContainer>
+                            <RightTitle>Live Session</RightTitle>
+                            <Circle></Circle>
+                        </LiveHeadingContainer>
                         <LiveSectionSubContainer>
                             <TopContainer>
                                 <Lecture>Ongoing Lecture</Lecture>
@@ -448,19 +491,38 @@ function Schedular() {
 }
 
 const Container = styled.div`
-    width: 85%;
+    width: 84%;
     background-color: #f9fafc;
+    @media all and (max-width: 980px) {
+        width: 81%;
+    }
+    @media all and (max-width: 768px) {
+        width: 76%;
+    }
 `;
 
 const LessonContainer = styled.div`
-    padding-left: 60px;
-    padding-right: 36px;
-    padding-top: 36px;
+    padding: 36px 0px 0px 60px;
+    @media all and (max-width: 1280px) {
+        padding: 36px 20px 0px 60px;
+    }
+    @media all and (max-width: 1080px) {
+        padding: 36px 39px 0px 45px;
+    }
 `;
 const LessonInnerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 97%;
+    @media all and (max-width: 1280px) {
+        width: 97%;
+    }
+    @media all and (max-width: 980px) {
+        width: 98%;
+    }
+    @media all and (max-width: 768px) {
+        width: 99%;
+    }
 `;
 const HeaderContainer = styled.div`
     /* width: 40%; */
@@ -525,6 +587,9 @@ const SubjectTitle = styled.h5`
     font-family: "Poppins-Bold";
     font-size: 15px;
     margin-bottom: 6px;
+    @media all and (max-width: 1080px) {
+        font-size: 14px;
+    }
 `;
 const SubjectDescription = styled.p`
     font-size: 11px;
@@ -553,16 +618,35 @@ const PersonDetails = styled.p`
 `;
 const BottomContainer = styled.div`
     display: flex;
-    padding: 40px 40px 30px 63px;
+    padding: 40px 0px 59px 63px;
+    @media all and (max-width: 980px) {
+        flex-wrap: wrap;
+    }
+    @media all and (max-width: 768px) {
+        padding: 40px 0px 59px 47px;
+    }
 `;
 const AssignmentContainer = styled.div`
     width: 45%;
     margin-right: 34px;
+    @media all and (max-width: 1080px) {
+        width: 42%;
+    }
+    @media all and (max-width: 980px) {
+        width: 68%;
+        margin-bottom: 30px;
+    }
+    @media all and (max-width: 768px) {
+        width: 84%;
+    }
 `;
 const Title = styled.h6`
-    font-size: 17px;
+    font-size: 19px;
     font-family: Poppins-Bold;
     margin-bottom: 18px;
+    @media all and (max-width: 1080px) {
+        font-size: 17px;
+    }
 `;
 const AssignmentStatus = styled.ul`
     display: flex;
@@ -571,20 +655,34 @@ const StatusList = styled.li`
     margin-right: 32px;
     font-family: Poppins-Bold;
     font-size: 13px;
+    color: gray;
     &:last-child {
         margin-right: 0px;
     }
 `;
 const AssignmentStatusSubContainer = styled.div`
-    margin-top: 40px;
+    margin-top: 50px;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0px 0px 2px gray;
+    @media all and (max-width: 1080px) {
+        margin-top: 70px;
+    }
+    @media all and (max-width: 980px) {
+        margin-top: 40px;
+    }
 `;
 const AssignmentStatusInnerContainer = styled.div`
-    padding-top: 63px;
-    padding-left: 20px;
-    padding-bottom: 30px;
+    padding: 63px 0px 30px 20px;
+    @media all and (max-width: 1280px) {
+        padding: 43px 0px 30px 20px;
+    }
+    @media all and (max-width: 1080px) {
+        padding: 20px 0px 21px 20px;
+    }
+    @media all and (max-width: 980px) {
+        padding: 26px 0px 26px 25px;
+    }
 `;
 const AssignmentDetails = styled.ul``;
 const AssignmentDetailsList = styled.li`
@@ -593,6 +691,9 @@ const AssignmentDetailsList = styled.li`
     margin-bottom: 14px;
     &:last-child {
         margin-bottom: 0px;
+    }
+    @media all and (max-width: 980px) {
+        margin-bottom: 20px;
     }
 `;
 const DetailsLeft = styled.div`
@@ -605,7 +706,13 @@ const SubjectContainer = styled.div`
     margin-bottom: 10px;
 `;
 const DetailsRight = styled.div`
-    width: 20%;
+    width: 23%;
+    @media all and (max-width: 1280px) {
+        width: 28%;
+    }
+    @media all and (max-width: 1080px) {
+        width: 31%;
+    }
 `;
 const SubjectName = styled.h5`
     font-family: Poppins-Bold;
@@ -613,12 +720,12 @@ const SubjectName = styled.h5`
 `;
 const ProgressBar = styled.div`
     display: flex;
-    display: ${props => (props.visible ? 'flex' : 'none')};
+    display: ${(props) => (props.visible ? "flex" : "none")};
     /* margin-right: 10px; */
 `;
 const ProgressMathsBar = styled.div`
     display: flex;
-    display: ${props => (props.visible ? 'flex' : 'none')};
+    display: ${(props) => (props.visible ? "flex" : "none")};
 `;
 const ProgressBarSubContainer = styled.div`
     width: 132px;
@@ -655,11 +762,39 @@ const StartButton = styled.button`
 `;
 const LiveContainer = styled.div`
     width: 42%;
+    @media all and (max-width: 1080px) {
+        width: 46%;
+    }
+    @media all and (max-width: 980px) {
+        width: 74%;
+    }
+    @media all and (max-width: 768px) {
+        width: 84%;
+    }
+`;
+const LiveHeadingContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 `;
 const RightTitle = styled.h6`
     font-family: "Poppins-Bold";
-    font-size: 17px;
-    margin-bottom: 14px;
+    font-size: 19px;
+    margin-right: 20px;
+    @media all and (max-width: 1080px) {
+        font-size: 17px;
+    }
+`;
+const Circle = styled.div`
+    align-items: center;
+    background-color: #5af096;
+    border-radius: 20px;
+    width: 13px;
+    height: 13px;
+    @media all and (max-width: 980px) {
+        width: 10px;
+        height: 10px;
+    }
 `;
 const LiveSectionSubContainer = styled.div`
     background-color: #fff;
@@ -669,10 +804,16 @@ const LiveSectionSubContainer = styled.div`
 const TopContainer = styled.div`
     padding: 10px 20px 10px 30px;
     border-bottom: 1px solid #a6a4a5;
+    @media all and (max-width: 1280px) {
+        padding: 10px 20px 10px 17px;
+    }
 `;
 const Lecture = styled.span`
-    font-size: 13px;
+    font-size: 14px;
     font-family: "Poppins-Medium";
+    @media all and (max-width: 1280px) {
+        font-size: 13px;
+    }
 `;
 const HorizontalLine = styled.hr`
     width: 70%;
@@ -682,13 +823,19 @@ const MiddleContainer = styled.div`
     display: flex;
     padding: 20px 27px 20px 30px;
     border-bottom: 1px solid #a6a4a5;
+    @media all and (max-width: 1280px) {
+        padding: 15px 27px 15px 18px;
+    }
 `;
 const MiddleLeftContainer = styled.div`
-    width: 76%;
+    width: 73%;
 `;
 const RevisionDetails = styled.p`
     font-size: 14px;
     font-family: "Poppins-Medium";
+    @media all and (max-width: 1280px) {
+        font-size: 12px;
+    }
 `;
 const ProfessorName = styled.p`
     font-size: 12px;
@@ -730,9 +877,7 @@ const PlayImage = styled.img`
     display: block;
 `;
 const LiveBottomContainer = styled.div`
-    padding: 17px 40px 2px 30px;
-    /* box-shadow: 0px 0px 3px 0px gray; */
-
+    padding: 17px 60px 2px 33px;
 `;
 const TopicDetails = styled.ul``;
 const TopicListItem = styled.li`
@@ -743,14 +888,25 @@ const TopicListItem = styled.li`
 `;
 const ListItemContainer = styled.div`
     display: flex;
+    justify-content: space-between;
     align-items: center;
 `;
 const TickImageContainer = styled.div`
     width: 20px;
     margin-right: 20px;
+    @media all and (max-width: 1080px) {
+        width: 18px;
+        margin-right: 10px;
+    }
+    @media all and (max-width: 980px) {
+        width: 16px;
+    }
 `;
 const TopicNameContainer = styled.div`
     width: 45%;
+    @media all and (max-width: 1080px) {
+        width: 49%;
+    }
 `;
 const TimeContainer = styled.div`
     width: 29%;
@@ -765,12 +921,23 @@ const TickImage = styled.img`
 const TopicName = styled.span`
     font-size: 12px;
     font-family: "Poppins-Medium";
-    margin-right: 10px;
+    @media all and (max-width: 1080px) {
+        font-size: 10px;
+    }
+    @media all and (max-width: 980px) {
+        font-size: 11px;
+    }
 `;
 const Time = styled.span`
     font-size: 11px;
     font-family: "Poppins-Medium";
     margin-right: 10px;
+    @media all and (max-width: 1080px) {
+        font-size: 10px;
+    }
+    @media all and (max-width: 980px) {
+        font-size: 11px;
+    }
 `;
 const MediumButton = styled.button`
     font-family: "Poppins-Medium";
