@@ -128,6 +128,9 @@ const Wrapper = styled.div`
     @media all and (max-width: 768px) {
         width: 32%;
     }
+    @media all and (max-width: 640px) {
+        width: 30%;
+    }
 `;
 const SideNavMainContainer = styled.div`
     background-color: #fff;
@@ -162,6 +165,9 @@ const SideNav = styled.div`
     }
     @media all and (max-width: 768px) {
         padding: 86px 0px 385px 22px;
+    }
+    @media all and (max-width: 640px) {
+        padding: 86px 0px 617px 22px;
     }
 `;
 const SideNavSubContaineer = styled.ul``;
@@ -202,6 +208,9 @@ const SideNavBottomSubContainer = styled.div`
     @media all and (max-width: 768px) {
         padding: 0px 22px 7px 22px;
     }
+    @media all and (max-width: 640px) {
+        padding: 0px 18px 7px 18px;
+    }
 `;
 const BookImageContainer = styled.div`
     width: 115px;
@@ -229,6 +238,9 @@ const Button = styled.button`
         padding: 6px 5px 6px 5px;
     }
     @media all and (max-width: 768px) {
+        padding: 4px 5px 4px 5px;
+    }
+    @media all and (max-width: 640px) {
         padding: 4px 5px 4px 5px;
     }
 `;

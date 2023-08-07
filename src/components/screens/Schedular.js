@@ -499,6 +499,9 @@ const Container = styled.div`
     @media all and (max-width: 768px) {
         width: 76%;
     }
+    @media all and (max-width: 640px) {
+        width: 70%;
+    }
 `;
 
 const LessonContainer = styled.div`
@@ -508,6 +511,9 @@ const LessonContainer = styled.div`
     }
     @media all and (max-width: 1080px) {
         padding: 36px 39px 0px 45px;
+    }
+    @media all and (max-width: 640px) {
+        padding: 36px 39px 0px 34px;
     }
 `;
 const LessonInnerContainer = styled.div`
@@ -625,6 +631,9 @@ const BottomContainer = styled.div`
     @media all and (max-width: 768px) {
         padding: 40px 0px 59px 47px;
     }
+    @media all and (max-width: 640px) {
+        padding: 40px 0px 59px 34px;
+    }
 `;
 const AssignmentContainer = styled.div`
     width: 45%;
@@ -659,6 +668,9 @@ const StatusList = styled.li`
     &:last-child {
         margin-right: 0px;
     }
+    @media all and (max-width: 640px) {
+        font-size: 12px;
+    }
 `;
 const AssignmentStatusSubContainer = styled.div`
     margin-top: 50px;
@@ -683,6 +695,9 @@ const AssignmentStatusInnerContainer = styled.div`
     @media all and (max-width: 980px) {
         padding: 26px 0px 26px 25px;
     }
+    @media all and (max-width: 640px) {
+        padding: 26px 0px 26px 18px;
+    }
 `;
 const AssignmentDetails = styled.ul``;
 const AssignmentDetailsList = styled.li`
@@ -695,9 +710,16 @@ const AssignmentDetailsList = styled.li`
     @media all and (max-width: 980px) {
         margin-bottom: 20px;
     }
+    @media all and (max-width: 640px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 `;
 const DetailsLeft = styled.div`
     width: 63%;
+    @media all and (max-width: 640px) {
+        width: 95%;
+    }
 `;
 const SubjectContainer = styled.div`
     display: flex;
@@ -743,6 +765,9 @@ const ProgressBarInnerContainer = styled.div`
 const SubjectDetails = styled.p`
     font-size: 11px;
     color: gray;
+    @media all and (max-width: 640px) {
+        margin-bottom: 17px;
+    }
 `;
 const ResumeButton = styled.button`
     border: 1px solid yellow;
@@ -826,9 +851,17 @@ const MiddleContainer = styled.div`
     @media all and (max-width: 1280px) {
         padding: 15px 27px 15px 18px;
     }
+    @media all and (max-width: 640px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 `;
 const MiddleLeftContainer = styled.div`
     width: 73%;
+    @media all and (max-width: 640px) {
+        width: 90%;
+        margin-bottom: 14px;
+    }
 `;
 const RevisionDetails = styled.p`
     font-size: 14px;
@@ -849,6 +882,10 @@ const MiddleRightContainer = styled.div`
     border-radius: 5px;
     height: 34px;
     width: 100px;
+    @media all and (max-width: 640px) {
+        height: 30px;
+        width: 88px;
+    }
 `;
 const PlayInnerContainer = styled.div`
     width: 30%;
@@ -863,6 +900,9 @@ const PlayButton = styled.div`
     background-color: #516bfe;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    @media all and (max-width: 640px) {
+        height: 30px;
+    }
 `;
 const Span = styled.span`
     margin-top: 6px;
@@ -878,6 +918,9 @@ const PlayImage = styled.img`
 `;
 const LiveBottomContainer = styled.div`
     padding: 17px 60px 2px 33px;
+    @media all and (max-width: 640px) {
+        padding: 17px 60px 2px 17px;
+    }
 `;
 const TopicDetails = styled.ul``;
 const TopicListItem = styled.li`
@@ -890,6 +933,10 @@ const ListItemContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media all and (max-width: 640px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 `;
 const TickImageContainer = styled.div`
     width: 20px;
@@ -907,9 +954,15 @@ const TopicNameContainer = styled.div`
     @media all and (max-width: 1080px) {
         width: 49%;
     }
+    @media all and (max-width: 640px) {
+        width: 84%;
+    }
 `;
 const TimeContainer = styled.div`
     width: 29%;
+    @media all and (max-width: 640px) {
+        margin-left: 28px;
+    }
 `;
 const ButtonContainer = styled.div`
     width: 10%;
@@ -927,6 +980,9 @@ const TopicName = styled.span`
     @media all and (max-width: 980px) {
         font-size: 11px;
     }
+    @media all and (max-width: 640px) {
+        font-size: 12px;
+    }
 `;
 const Time = styled.span`
     font-size: 11px;
@@ -937,6 +993,9 @@ const Time = styled.span`
     }
     @media all and (max-width: 980px) {
         font-size: 11px;
+    }
+    @media all and (max-width: 640px) {
+        font-size: 12px;
     }
 `;
 const MediumButton = styled.button`
