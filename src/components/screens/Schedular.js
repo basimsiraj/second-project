@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Header from "../includes/Header";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -49,6 +50,14 @@ function Schedular() {
             {
                 breakpoint: 768,
                 settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 1,
@@ -58,6 +67,9 @@ function Schedular() {
     };
     return (
         <>
+            <Helmet>
+                <title>Schedular page</title>
+            </Helmet>
             <Container>
                 <Header />
                 <LessonContainer>
@@ -317,14 +329,14 @@ function Schedular() {
                                         </DetailsLeft>
                                         <DetailsRight>
                                             <ResumeButton
-                                                  onClick={() => {
+                                                onClick={() => {
                                                     setShowPhysicsProgressBar(
                                                         true
                                                     );
                                                     handleResumeClick();
                                                 }}
-                                              >
-                                                Resume 
+                                            >
+                                                Resume
                                             </ResumeButton>
                                         </DetailsRight>
                                     </AssignmentDetailsList>
@@ -595,6 +607,12 @@ const SubjectImage = styled.img`
 `;
 const ContentContainer = styled.div`
     padding: 20px 60px 22px 14px;
+    @media all and (max-width: 980px) {
+        padding: 20px 5px 22px 14px;
+    }
+    @media all and (max-width: 640px) {
+        padding: 20px 11px 22px 11px;
+    }
 `;
 const SubjectTitle = styled.h5`
     font-family: "Poppins-Bold";
@@ -767,9 +785,13 @@ const ProgressBarSubContainer = styled.div`
     height: 12px;
     border-radius: 5px;
     background-color: gray;
+    @media all and (max-width: 1280px) {
+        width: 93px;
+        height: 9px;
+    }
     @media all and (max-width: 360px) {
-        width: 86px;
-        height: 10px; 
+        width: 87px;
+        height: 8px;
     }
 `;
 const ProgressBarInnerContainer = styled.div`
@@ -778,9 +800,13 @@ const ProgressBarInnerContainer = styled.div`
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: blue;
+    @media all and (max-width: 1280px) {
+        width: 49px;
+        height: 8px;
+    }
     @media all and (max-width: 360px) {
-        width: 48px;
-        height: 10px;
+        width: 46px;
+        height: 8px;
     }
 `;
 const SubjectDetails = styled.p`
@@ -978,6 +1004,9 @@ const TopicNameContainer = styled.div`
     @media all and (max-width: 640px) {
         width: 84%;
     }
+    @media all and (max-width: 360px) {
+        width: 82%;
+    }
 `;
 const TimeContainer = styled.div`
     width: 29%;
@@ -1007,6 +1036,9 @@ const TopicName = styled.span`
     @media all and (max-width: 640px) {
         font-size: 12px;
     }
+    @media all and (max-width: 360px) {
+        font-size: 10px;
+    }
 `;
 const Time = styled.span`
     font-size: 11px;
@@ -1020,6 +1052,9 @@ const Time = styled.span`
     }
     @media all and (max-width: 640px) {
         font-size: 12px;
+    }
+    @media all and (max-width: 360px) {
+        font-size: 10px;
     }
 `;
 const MediumButton = styled.button`

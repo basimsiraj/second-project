@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 function Notes() {
   return (
     <>
+        <Helmet>
+            <title>Notes page</title>
+        </Helmet>
         <MainContainer>
             <Head>Notes page</Head>
             <Description>Coming soon...</Description>

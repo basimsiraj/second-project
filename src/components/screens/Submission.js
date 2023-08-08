@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 function Submission() {
   return (
     <>
+        <Helmet>
+            <title>Submission page</title>
+        </Helmet>
         <MainContainer>
             <Head>Submission page</Head>
             <Description>Coming soon...</Description>

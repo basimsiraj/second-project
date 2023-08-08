@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 function Rewards() {
   return (
     <>
+        <Helmet>
+            <title>Rewards page</title>
+        </Helmet>
         <MainContainer>
             <Head>Rewards page</Head>
             <Description>Coming soon...</Description>

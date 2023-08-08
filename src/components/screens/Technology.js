@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 
 function Technology() {
   return (
     <>
+        <Helmet>
+            <title>Technology page</title>
+        </Helmet>
         <MainContainer>
             <Head>Technology page</Head>
             <Description>Coming soon...</Description>
