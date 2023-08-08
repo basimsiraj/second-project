@@ -544,7 +544,7 @@ const LessonInnerContainer = styled.div`
     }
 `;
 const HeaderContainer = styled.div`
-    /* width: 40%; */
+    
 `;
 const Heading = styled.h2`
     margin-bottom: 26px;
@@ -556,7 +556,6 @@ const Heading = styled.h2`
 `;
 const SliderArrows = styled.div`
     display: flex;
-    /* width: 11%; */
 `;
 const SliderLeftArrows = styled.div`
     margin-right: 17px;
@@ -774,7 +773,6 @@ const SubjectName = styled.h5`
 const ProgressBar = styled.div`
     display: flex;
     display: ${(props) => (props.visible ? "flex" : "none")};
-    /* margin-right: 10px; */
 `;
 const ProgressMathsBar = styled.div`
     display: flex;

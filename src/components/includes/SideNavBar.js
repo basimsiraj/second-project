@@ -148,12 +148,6 @@ function SideNavBar() {
 }
 const Wrapper = styled.div`
     width: 19%;
-    /* @media all and (max-width: 1080px) {
-        width: 19%;
-    }
-    @media all and (max-width: 640px) {
-        width: 30%;
-    } */
     @media all and (max-width: 768px) {
         width: 32%;
     }
@@ -169,10 +163,6 @@ const Container =styled.div`
 `;
 const SideNavMainContainer = styled.div`
     background-color: #fff;
-    /* width: 224px; */
-    /* padding-bottom: 60px; */
-    /* border: 1ps solid #dadada; */
-    /* box-shadow: 5px 10px  20px 10px red; */
 `;
 const SideNavTopContainer = styled.div`
     padding: 30px 0px 0px 90px;
