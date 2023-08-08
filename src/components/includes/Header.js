@@ -9,7 +9,7 @@ function Header() {
                     <ListItem>
                         <Icon
                             src={
-                                require("../../assets/images/Bell.svg").default
+                                require("../../assets/images/Bell.png")
                             }
                             alt="Bell"
                         />
@@ -56,10 +56,11 @@ const IconContainer = styled.ul`
 const ListItem = styled.li`
     margin-right: 10px;
     &:first-child {
-        width: 16px;
+        width: 24px;
+        margin-right: 4px;
     }
     &:nth-child(2n) {
-        width: 22px;
+        width: 24px;
     }
     &:last-child {
         margin-right: 0;

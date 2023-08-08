@@ -317,14 +317,14 @@ function Schedular() {
                                         </DetailsLeft>
                                         <DetailsRight>
                                             <ResumeButton
-                                                onClick={() => {
+                                                  onClick={() => {
                                                     setShowPhysicsProgressBar(
                                                         true
                                                     );
                                                     handleResumeClick();
                                                 }}
-                                            >
-                                                Resume
+                                              >
+                                                Resume 
                                             </ResumeButton>
                                         </DetailsRight>
                                     </AssignmentDetailsList>
@@ -500,7 +500,8 @@ const Container = styled.div`
         width: 76%;
     }
     @media all and (max-width: 640px) {
-        width: 70%;
+        width: 95%;
+        background-color: #fff;
     }
 `;
 
@@ -537,6 +538,9 @@ const Heading = styled.h2`
     margin-bottom: 26px;
     font-size: 19px;
     font-family: Poppins-Bold;
+    @media all and (max-width: 360px) {
+        font-size: 17px;
+    }
 `;
 const SliderArrows = styled.div`
     display: flex;
@@ -544,6 +548,9 @@ const SliderArrows = styled.div`
 `;
 const SliderLeftArrows = styled.div`
     margin-right: 17px;
+    @media all and (max-width: 360px) {
+        margin-right: 5px;
+    }
 `;
 const ArrowLeftImageContainer = styled.div`
     width: 24px;
@@ -642,7 +649,7 @@ const AssignmentContainer = styled.div`
         width: 42%;
     }
     @media all and (max-width: 980px) {
-        width: 68%;
+        width: 79%;
         margin-bottom: 30px;
     }
     @media all and (max-width: 768px) {
@@ -671,6 +678,9 @@ const StatusList = styled.li`
     @media all and (max-width: 640px) {
         font-size: 12px;
     }
+    @media all and (max-width: 360px) {
+        font-size: 11px;
+    }
 `;
 const AssignmentStatusSubContainer = styled.div`
     margin-top: 50px;
@@ -693,7 +703,7 @@ const AssignmentStatusInnerContainer = styled.div`
         padding: 20px 0px 21px 20px;
     }
     @media all and (max-width: 980px) {
-        padding: 26px 0px 26px 25px;
+        padding: 26px 0px 26px 39px;
     }
     @media all and (max-width: 640px) {
         padding: 26px 0px 26px 18px;
@@ -739,6 +749,9 @@ const DetailsRight = styled.div`
 const SubjectName = styled.h5`
     font-family: Poppins-Bold;
     font-size: 13px;
+    @media all and (max-width: 480px) {
+        font-size: 12px;
+    }
 `;
 const ProgressBar = styled.div`
     display: flex;
@@ -754,6 +767,10 @@ const ProgressBarSubContainer = styled.div`
     height: 12px;
     border-radius: 5px;
     background-color: gray;
+    @media all and (max-width: 360px) {
+        width: 86px;
+        height: 10px; 
+    }
 `;
 const ProgressBarInnerContainer = styled.div`
     width: 70px;
@@ -761,6 +778,10 @@ const ProgressBarInnerContainer = styled.div`
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: blue;
+    @media all and (max-width: 360px) {
+        width: 48px;
+        height: 10px;
+    }
 `;
 const SubjectDetails = styled.p`
     font-size: 11px;
@@ -791,7 +812,7 @@ const LiveContainer = styled.div`
         width: 46%;
     }
     @media all and (max-width: 980px) {
-        width: 74%;
+        width: 79%;
     }
     @media all and (max-width: 768px) {
         width: 84%;
@@ -961,7 +982,10 @@ const TopicNameContainer = styled.div`
 const TimeContainer = styled.div`
     width: 29%;
     @media all and (max-width: 640px) {
-        margin-left: 28px;
+        margin-left: 44px;
+    }
+    @media all and (max-width: 480px) {
+        margin-left: 30px;
     }
 `;
 const ButtonContainer = styled.div`

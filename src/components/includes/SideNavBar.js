@@ -1,11 +1,37 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import Sidebar from "../screens/Sidebar";
 
 function SideNavBar() {
+    const [showSidebar, setShowSidebar] = useState(false);
+
+    const handleToggleSidebar = () => {
+        setShowSidebar(!showSidebar);
+    };
+    
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 640) {
+                setShowSidebar(true);
+            } else {
+                setShowSidebar(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        handleResize(); 
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     return (
         <>
             <Wrapper>
+            {showSidebar &&<Container>
+                <Sidebar />
+                </Container>}
                 <SideNavMainContainer>
                     <SideNavTopContainer>
                         <LogoContainer>
@@ -121,15 +147,24 @@ function SideNavBar() {
     );
 }
 const Wrapper = styled.div`
-    width: 17%;
-    @media all and (max-width: 1080px) {
+    width: 19%;
+    /* @media all and (max-width: 1080px) {
         width: 19%;
     }
+    @media all and (max-width: 640px) {
+        width: 30%;
+    } */
     @media all and (max-width: 768px) {
         width: 32%;
     }
     @media all and (max-width: 640px) {
-        width: 30%;
+        width: 5%;
+    }
+`;
+const Container =styled.div`
+    display: hidden;
+    @media all and (max-width: 640px) {
+        display:block;
     }
 `;
 const SideNavMainContainer = styled.div`
@@ -161,10 +196,10 @@ const SideNav = styled.div`
         padding: 86px 0px 70px 50px;
     }
     @media all and (max-width: 980px) {
-        padding: 86px 0px 70px 22px;
+        padding: 86px 0px 394px 22px;
     }
     @media all and (max-width: 768px) {
-        padding: 86px 0px 385px 22px;
+        padding: 86px 0px 399px 22px;
     }
     @media all and (max-width: 640px) {
         padding: 86px 0px 617px 22px;
@@ -198,6 +233,9 @@ const SideNavBottomMainContainer = styled.div`
     margin-right: 5px;
     @media all and (max-width: 1280px) {
         margin-left: 4px;
+    }
+    @media all and (max-width: 640px) {
+        display: none;
     }
 `;
 const SideNavBottomSubContainer = styled.div`
